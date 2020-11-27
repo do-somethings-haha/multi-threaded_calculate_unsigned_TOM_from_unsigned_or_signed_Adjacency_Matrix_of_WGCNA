@@ -35,6 +35,6 @@ Details about Weighted gene co-expression network analysis(WGCNA):  <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/   <br/>
 Details about the usage of original TOMsimilarity() function
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/FemaleLiver-02-networkConstr-man.pdf  <br/>
-Details about mathematical formulas of TOM: <br/>
+Details about mathematical formulas of the Topological Overlap Matrix (TOM): <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/TechnicalReports/index.html
 
