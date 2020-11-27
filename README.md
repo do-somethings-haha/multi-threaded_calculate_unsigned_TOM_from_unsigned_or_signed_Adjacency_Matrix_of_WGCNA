@@ -33,5 +33,8 @@ When you get TOM in R, you would better run the following code in terminal to re
 
 Details about Weighted gene co-expression network analysis(WGCNA):  <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/   <br/>
-Details about TOM: <br/>
+Details about the usage of original TOMsimilarity() function
+  &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/FemaleLiver-02-networkConstr-man.pdf  <br/>
+Details about mathematical formulas of TOM: <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/TechnicalReports/index.html
+
