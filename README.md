@@ -13,11 +13,11 @@ If your operating system is Ubuntu, you can open the terminal and run:   <br/>
 
 <h2>Step 2: Compile C++ codes and run</h2>
 According to the parameters of TOMsimilarity() function in WGCNA that you want to set up ( usually, TOMType = "unsigned", TOMDenom = "min" ), download the C++ codes named calculate_TOM_unsigned_min.cpp or calculate_TOM_unsigned_mean.cpp and open the terminal to compile them:  <br/>
-  <pre>g++ -fopenmp calculate_TOM_unsigned_min.cpp -o calculate_TOM_unsigned_min -O3 -lgomp -lpthread -lsqlite3</pre>
-  <pre>or   g++ -fopenmp calculate_TOM_unsigned_mean.cpp -o calculate_TOM_unsigned_mean -O3 -lgomp -lpthread -lsqlite3</pre>
+  <pre>g++ -fopenmp calculate_TOM_unsigned_min.cpp -o calculate_TOM_unsigned_min -O3 -lgomp -lpthread -lsqlite3
+  or   g++ -fopenmp calculate_TOM_unsigned_mean.cpp -o calculate_TOM_unsigned_mean -O3 -lgomp -lpthread -lsqlite3</pre>
 Then, run it:   <br/>
-  <pre>./calculate_TOM_unsigned_min</pre>
-  <pre>or   ./calculate_TOM_unsigned_mean</pre>
+  <pre>./calculate_TOM_unsigned_min
+  or   ./calculate_TOM_unsigned_mean</pre>
 C++ will wait for Adjacency Matrix in SQLite database files from R language.   <br/><br/>
 
 <h2>Step 3: run R scripts</h2>
