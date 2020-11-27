@@ -9,15 +9,15 @@ Weighted gene co-expression network analysis(WGCNA) is a R package that is used 
 
 <h2>Step 1: Install SQLite on Linux</h2>
 If your operating system is Ubuntu, you can open the terminal and run:   <br/>
-  <pre>&#9</pre> sudo apt install sqlite3  <br/><br/>
+  &nbsp;&nbsp;&nbsp;&nbsp; sudo apt install sqlite3  <br/><br/>
 
 <h2>Step 2: Compile C++ codes and run</h2>
 According to the parameters of TOMsimilarity() function in WGCNA that you want to set up ( usually, TOMType = "unsigned", TOMDenom = "min" ), download the C++ codes named calculate_TOM_unsigned_min.cpp or calculate_TOM_unsigned_mean.cpp and open the terminal to compile them:  <br/>
-  &nbsp; g++ -fopenmp calculate_TOM_unsigned_min.cpp -o calculate_TOM_unsigned_min -O3 -lgomp -lpthread -lsqlite3  <br/>
-  &nbsp; or g++ -fopenmp calculate_TOM_unsigned_mean.cpp -o calculate_TOM_unsigned_mean -O3 -lgomp -lpthread -lsqlite3  <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp; g++ -fopenmp calculate_TOM_unsigned_min.cpp -o calculate_TOM_unsigned_min -O3 -lgomp -lpthread -lsqlite3  <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp; or g++ -fopenmp calculate_TOM_unsigned_mean.cpp -o calculate_TOM_unsigned_mean -O3 -lgomp -lpthread -lsqlite3  <br/>
 Then, run it:   <br/>
-  &nbsp; ./calculate_TOM_unsigned_min   <br/>
-  &nbsp; or ./calculate_TOM_unsigned_mean   <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp; ./calculate_TOM_unsigned_min   <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp; or ./calculate_TOM_unsigned_mean   <br/>
 C++ will wait for Adjacency Matrix in SQLite database files from R language.   <br/><br/>
 
 <h2>Step 3: run R scripts</h2>
@@ -27,7 +27,7 @@ When you figure out the Adjacency Matrix, you can run the R scripts here.    <br
 <h2>Step 4: wait for the calculation of TOM and release memory</h2>
 The R scripts will transfer the Adjacency Matrix to SQLite database files. Then, C++ will read the Adjacency Matrix and calculate the TOM. Next, C++ transfer the TOM into SQLite database files and R read the files. Finally, R combine the results and get TOM.   <br/>
 When you get TOM in R, you would better run the following code in terminal to release memory.    <br/>
-  &nbsp; rm /dev/shm/calculate_TOM/*   <br/><br/>
+  &nbsp;&nbsp;&nbsp;&nbsp; rm /dev/shm/calculate_TOM/*   <br/><br/>
 
 <h1>Others</h1>
 
