@@ -22,7 +22,8 @@ C++ will wait for Adjacency Matrix in SQLite database files from R language.   <
 
 <h2>Step 3: run R scripts</h2>
 Download the R scripts named calculate_TOM.R and replace the original TOMsimilarity() function in WGCNA.   <br/>
-Then, you figure out the Adjacency Matrix by WGCNA and run the R scripts here instead of TOMsimilarity() function.    <br/><br/>
+Then, you figure out the Adjacency Matrix by adjacency function in WGCNA, and get a matrix named adjacency_matrix.    <br/>
+Next, you can run the R scripts here instead of TOMsimilarity() function.    <br/><br/>
 
 <h2>Step 4: wait for the calculation of TOM and release memory</h2>
 The R scripts will transfer the Adjacency Matrix to SQLite database files. Then, C++ will read the Adjacency Matrix and calculate the TOM. Next, C++ transfer the TOM into SQLite database files and R read the files. Finally, R combine the results and get TOM.   <br/>
@@ -33,7 +34,7 @@ When you get TOM in R, you would better run the following code in terminal to re
 
 Details about Weighted gene co-expression network analysis(WGCNA):  <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/   <br/>
-Details about the usage of original TOMsimilarity() function
+Details about the usage of original TOMsimilarity() function   <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/FemaleLiver-02-networkConstr-man.pdf  <br/>
 Details about mathematical formulas of the Topological Overlap Matrix (TOM): <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/TechnicalReports/index.html
