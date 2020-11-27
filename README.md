@@ -9,7 +9,7 @@ Weighted gene co-expression network analysis(WGCNA) is a R package that is used 
 
 <h2>Step 1: Install SQLite on Linux</h2>
 If your operating system is Ubuntu, you can open the terminal and run:   <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp; sudo apt install sqlite3  <br/><br/>
+  &nbsp;&nbsp;&nbsp;&nbsp; <pre>sudo apt install sqlite3  <br/><br/></pre>
 
 <h2>Step 2: Compile C++ codes and run</h2>
 According to the parameters of TOMsimilarity() function in WGCNA that you want to set up ( usually, TOMType = "unsigned", TOMDenom = "min" ), download the C++ codes named calculate_TOM_unsigned_min.cpp or calculate_TOM_unsigned_mean.cpp and open the terminal to compile them:  <br/>
