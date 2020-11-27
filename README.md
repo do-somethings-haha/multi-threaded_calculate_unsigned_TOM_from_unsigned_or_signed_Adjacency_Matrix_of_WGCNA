@@ -9,7 +9,7 @@ Weighted gene co-expression network analysis(WGCNA) is a R package that is used 
 
 <h2>Step 1: Install SQLite on Linux</h2>
 If your operating system is Ubuntu, you can open the terminal and run:   <br/>
-  <pre> sudo apt install sqlite3
+  <pre>           sudo apt install sqlite3
   
   </pre>
 
