@@ -22,7 +22,7 @@ or   ./calculate_TOM_unsigned_mean</pre>
 C++ will wait for Adjacency Matrix in SQLite database files from R language.   <br/><br/>
 
 <h2>Step 3: run R scripts</h2>
-Download the R scripts named calculate_TOM.R and replace the original TOMsimilarity() function in WGCNA.   <br/>
+Download the R scripts named calculate_TOM.R and replace the original TOMsimilarity() function in WGCNA.    <br/>
 Then, you figure out the Adjacency Matrix by adjacency function in WGCNA, and get a matrix named adjacency_matrix.    <br/>
 Next, you can run the R scripts here instead of TOMsimilarity() function.     <br/><br/>
 
