@@ -3,7 +3,7 @@ Algorithm optimisation for weighted gene co-expression network analysis(WGCNA, a
 
 <h1>Introduction</h1>
 
-Weighted gene co-expression network analysis(WGCNA) is a R package that is used to analysize the data of gene expression to construct gene regulatory networks. The most time-consuming step of the whole analysis is using TOMsimilarity() function to calculate the Topological Overlap Matrix (TOM) from the Adjacency Matrix in a single thread. TOMsimilarity() function is single-threaded, so I realize multi-threaded calculation in C++. These codes can run on Linux. The following is the usage.
+Weighted gene co-expression network analysis(WGCNA) is a R package that is used to analysize the data of gene expression to construct gene regulatory networks. The most time-consuming step of the whole analysis is using TOMsimilarity() function to calculate the Topological Overlap Matrix (TOM) from the Adjacency Matrix in a single thread. TOMsimilarity() function is single-threaded, so I realize multi-threaded calculation in C++. The following codes will replace TOMsimilarity() function in WGCNA packages and also figure out a matrix named TOM with colnames "V1,V2,V3...". Two kinds of TOMs differ only in the last significant figures due to the truncation error. These codes can run on Linux. The following is the usage.
 
 <h1>Usage of codes</h1>
 
