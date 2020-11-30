@@ -31,7 +31,7 @@ The R scripts will transfer the Adjacency Matrix to SQLite database files.    <b
 Then, C++ will read the Adjacency Matrix and calculate the TOM.    <br/>
 Next, C++ transfer the TOM into SQLite database files and R read the files.    <br/>
 Finally, R combine the results and get TOM.   <br/>
-When you get TOM in R, you can run the following code in terminal to release memory if there are not other programs creating files in /dev/shm/.    <br/>
+When you get TOM in R, you can run the following code in terminal to release memory if there are not other programs creating files in /dev/shm/    <br/>
   <pre>rm /dev/shm/*</pre>
 
 <h1>References</h1>
