@@ -24,10 +24,13 @@ Next, you can run the R scripts here instead of TOMsimilarity() function.     <b
 Meanwhile, you can run one of the C++ programs using the following commands in ternimal  <br/>
   <pre>./calculate_TOM_unsigned_min
 or   ./calculate_TOM_unsigned_mean</pre>
-One of the C++ programs will wait for Adjacency Matrix in SQLite database files from R language.   <br/><br/>
+The C++ program will wait for Adjacency Matrix in SQLite database files from R language.   <br/><br/>
 
 <h2>Step 4: wait for the calculation of TOM and release memory</h2>
-The R scripts will transfer the Adjacency Matrix to SQLite database files. Then, C++ will read the Adjacency Matrix and calculate the TOM. Next, C++ transfer the TOM into SQLite database files and R read the files. Finally, R combine the results and get TOM.   <br/>
+The R scripts will transfer the Adjacency Matrix to SQLite database files.    <br/>
+Then, C++ will read the Adjacency Matrix and calculate the TOM.    <br/>
+Next, C++ transfer the TOM into SQLite database files and R read the files.    <br/>
+Finally, R combine the results and get TOM.   <br/>
 When you get TOM in R, you can run the following code in terminal to release memory if there are not other programs creating files in /dev/shm/.    <br/>
   <pre>rm /dev/shm/*</pre>
 
