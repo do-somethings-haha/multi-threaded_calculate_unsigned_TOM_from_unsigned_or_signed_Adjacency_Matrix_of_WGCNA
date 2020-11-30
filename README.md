@@ -17,21 +17,21 @@ According to the parameters of TOMsimilarity() function in WGCNA that you want t
   <pre>g++ -fopenmp calculate_TOM_unsigned_min.cpp -o calculate_TOM_unsigned_min -O3 -lgomp -lpthread -lsqlite3
 or   g++ -fopenmp calculate_TOM_unsigned_mean.cpp -o calculate_TOM_unsigned_mean -O3 -lgomp -lpthread -lsqlite3</pre>
 
-<h2>Step 3: run R scripts and C++ codes</h2>
+<h2>Step 3: run R scripts and one of the C++ programs</h2>
 Download the R scripts named calculate_TOM.R and replace the original TOMsimilarity() function in WGCNA.    <br/>
 Then, you figure out the Adjacency Matrix by adjacency function in WGCNA, and get a matrix named adjacency_matrix.    <br/>
 Next, you can run the R scripts here instead of TOMsimilarity() function.     <br/><br/>
-Meanwhile, you can run the C++ codes using the following commands in ternimal  <br/>
+Meanwhile, you can run one of the C++ programs using the following commands in ternimal  <br/>
   <pre>./calculate_TOM_unsigned_min
 or   ./calculate_TOM_unsigned_mean</pre>
-C++ will wait for Adjacency Matrix in SQLite database files from R language.   <br/><br/>
+One of the C++ programs will wait for Adjacency Matrix in SQLite database files from R language.   <br/><br/>
 
 <h2>Step 4: wait for the calculation of TOM and release memory</h2>
 The R scripts will transfer the Adjacency Matrix to SQLite database files. Then, C++ will read the Adjacency Matrix and calculate the TOM. Next, C++ transfer the TOM into SQLite database files and R read the files. Finally, R combine the results and get TOM.   <br/>
 When you get TOM in R, you can run the following code in terminal to release memory if there are not other programs creating files in /dev/shm/.    <br/>
   <pre>rm /dev/shm/*</pre>
 
-<h1>Others</h1>
+<h1>References</h1>
 
 Details about Weighted gene co-expression network analysis(WGCNA):  <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/   <br/>
