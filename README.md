@@ -1,5 +1,5 @@
 # fast_calculate_TOM_of_WGCNA
-Algorithm optimisation for weighted gene co-expression network analysis(WGCNA, a package of R language): accelerating the calculation of Topology Overlap Matrices(TOM) with C++
+Algorithm optimization for weighted gene co-expression network analysis(WGCNA, a package of R language): accelerating the calculation of Topology Overlap Matrices(TOM) with C++
 
 <h1>Introduction</h1>
 
