@@ -1,44 +1,28 @@
-# fast_calculate_TOM_of_WGCNA
-Algorithm optimization for weighted gene co-expression network analysis(WGCNA, a package of R language): accelerating the calculation of Topology Overlap Matrices(TOM) with C++
+# fast calculate unsigned TOM from unsigned Adjacency Matrix of WGCNA
+Optimize weighted gene co-expression network analysis: fast calculate Topological Overlap Matrix
 
 <h1>Introduction</h1>
 
-Weighted gene co-expression network analysis(WGCNA) is a R package that is used to analysize the data of gene expression to construct gene regulatory networks. The most time-consuming step of the whole analysis is using TOMsimilarity() function to calculate the Topological Overlap Matrix (TOM) from the Adjacency Matrix in a single thread. So, I realize multi-threaded calculation in C++. The following codes will replace TOMsimilarity() function in WGCNA packages and also figure out a matrix named TOM with colnames "V1,V2,V3...". Two kinds of TOMs differ only in the last significant figures due to the truncation error. These codes can run on Linux. If these codes are used to calculate the Adjacency Matrix with more than 10,000 genes, it is recommended to run on large-capacity ECC memory banks, server CPUs such as Intel Xeon series or AMD EPYC series, and good radiators. The following is the usage.
+Biomolecular networks are usually scale-free hierarchical networks. The weighted gene co-expression network analysis (WGCNA) package in R language treats gene co-expression networks as undirected scale-free hierarchical weighted networks. WGCNA uses an Adjacency Matrix to store a network, next calculates the Topological Overlap Matrix (TOM), and then gets the modules (sub-networks), each module corresponds to a certain biological function. The most time-consuming step of WGCNA is to calculate TOM from the Adjacency Matrix in a single thread. This paper changes the single-threaded algorithm of the TOM to a multi-threaded algorithm (the parameters use the default values of WGCNA). This paper uses Rcpp to make R call a C++ function, then C++ uses OpenMP to open multiple threads, and calculates TOM from the Adjacency Matrix. On Shared-memory MultiProcessor systems, the calculation time decreases as the number of CPU cores increases. The algorithm of this paper can promote the application of WGCNA on large data sets, and help other research fields to find sub-networks in undirected scale-free hierarchical weighted networks.
 
 <h1>Usage of codes</h1>
 
-<h2>Step 1: Install SQLite on Linux</h2>
-If your operating system is Ubuntu, you can open the terminal and run:   <br/>
-  <pre>sudo apt-get install sqlite3
-sudo apt-get install libsqlite3-dev</pre>
+<h2>If you want to analyze the transcriptome data with WGCNA and the codes here<h2>
 
-<h2>Step 2: Compile C++ codes</h2>
-According to the parameters of TOMsimilarity() function in WGCNA that you want to set up ( usually, TOMType = "unsigned", TOMDenom = "min" ), download the C++ codes named calculate_TOM_unsigned_min.cpp or calculate_TOM_unsigned_mean.cpp and open the terminal to compile them:  <br/>
-  <pre>g++ -fopenmp calculate_TOM_unsigned_min.cpp -o calculate_TOM_unsigned_min -O3 -lgomp -lpthread -lsqlite3
-or   g++ -fopenmp calculate_TOM_unsigned_mean.cpp -o calculate_TOM_unsigned_mean -O3 -lgomp -lpthread -lsqlite3</pre>
+<h3>Step 1: Put the source code files of R and C++ in the working directory of R</h3>
+The file path of the R working directory should contain only English letters, numbers, and underscores. 
 
-<h2>Step 3: run R scripts and one of the C++ programs</h2>
-Download the R scripts named calculate_TOM.R and replace the original TOMsimilarity() function in WGCNA.    <br/>
-Then, you figure out the Adjacency Matrix by adjacency function in WGCNA, and get a matrix named adjacency_matrix.    <br/>
-Next, you can run the R scripts here instead of TOMsimilarity() function.     <br/>
-Meanwhile, you can run one of the C++ programs using the following commands in ternimal  <br/>
-  <pre>./calculate_TOM_unsigned_min
-or   ./calculate_TOM_unsigned_mean</pre>
-The C++ program will wait for Adjacency Matrix in SQLite database files from R language.   <br/><br/>
+<h3>Step 2: Run the R code you just copied instead of WGCNA's TOMsimilarity function</h3>
+You need to use the WGCNA package to calculate the unsigned Adjacency Matrix from the expression matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA.
 
-<h2>Step 4: wait for the calculation of TOM and release memory</h2>
-The R scripts will transfer the Adjacency Matrix to SQLite database files.    <br/>
-Then, C++ will read the Adjacency Matrix and calculate the TOM.    <br/>
-Next, C++ transfer the TOM into SQLite database files and R read the files.    <br/>
-Finally, R combine the results and get TOM.   <br/>
-When you get TOM in R, you can run the following code in terminal to release memory if there are not other programs creating files in /dev/shm/    <br/>
-  <pre>rm /dev/shm/*</pre>
+<h2>If you want to analyze data from other research fields<h2>
+If other research fields need to find sub-networks from undirected scale-free hierarchical weighted networks, you can refer to the C++ header files prepared for other research fields here. This header file defines a function that can use a symmetric Adjacency Matrix to calculate an unsigned Topological Overlap Matrix. Then you can use the Topological Overlap Matrix to divide the sub-networks. 
 
 <h1>References</h1>
 
-Details about Weighted gene co-expression network analysis(WGCNA):  <br/>
+Details about Weighted gene co-expression network analysis(WGCNA) of R language:  <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/   <br/>
-Details about the usage of original TOMsimilarity() function   <br/>
+Details about the usage of original TOMsimilarity() function in WGCNA   <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/FemaleLiver-02-networkConstr-man.pdf  <br/>
 Details about mathematical formulas of the Topological Overlap Matrix (TOM): <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/TechnicalReports/index.html
