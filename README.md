@@ -14,7 +14,7 @@ Optimize weighted gene co-expression network analysis: fast calculate Topologica
   &nbsp;&nbsp;&nbsp;&nbsp; The file path of the R working directory should contain only English letters, numbers, and underscores. 
 
 <h3>Step 2: Run the R code you just copied instead of WGCNA's TOMsimilarity function</h3>
-  &nbsp;&nbsp;&nbsp;&nbsp; You need to use the WGCNA package to calculate the unsigned Adjacency Matrix from the expression matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA.
+  &nbsp;&nbsp;&nbsp;&nbsp; You need to use the WGCNA package to calculate the unsigned Adjacency Matrix from the expression matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA. Then you can run the R codes that you downloaded from here.
 
 <br/><br/>
 <h2>If you want to analyze data from other research fields<h2>
