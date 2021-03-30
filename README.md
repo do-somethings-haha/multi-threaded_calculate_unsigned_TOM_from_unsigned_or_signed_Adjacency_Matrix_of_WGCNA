@@ -15,8 +15,8 @@ The file path of the R working directory should contain only English letters, nu
 <h3>Step 2: Run the R code you just copied instead of WGCNA's TOMsimilarity function</h3>
 You need to use the WGCNA package to calculate the unsigned Adjacency Matrix from the expression matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA.
 
-<h2>If you want to analyze data from other research fields<h2><h3></h3>
-If other research fields need to find sub-networks from undirected scale-free hierarchical weighted networks, you can refer to the C++ header files prepared for other research fields here. This header file defines a function that can use a symmetric Adjacency Matrix to calculate an unsigned Topological Overlap Matrix. Then you can use the Topological Overlap Matrix to divide the sub-networks. 
+<h2>If you want to analyze data from other research fields<h2>
+<p>If other research fields need to find sub-networks from undirected scale-free hierarchical weighted networks, you can refer to the C++ header files prepared for other research fields here. This header file defines a function that can use a symmetric Adjacency Matrix to calculate an unsigned Topological Overlap Matrix. Then you can use the Topological Overlap Matrix to divide the sub-networks.</p>
 
 <h1>References</h1>
 
