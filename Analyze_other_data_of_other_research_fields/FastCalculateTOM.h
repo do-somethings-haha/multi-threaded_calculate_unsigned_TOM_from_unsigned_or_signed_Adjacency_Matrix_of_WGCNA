@@ -9,7 +9,7 @@ using namespace std;
 // Then pass the secondary pointer and the number of nodes of undirected scale-free hierarchical weighted networks as parameters to the following function.
 // The return value of the function is also a two-dimensional array, which stores the unsigned Topological Overlap Matrix.
 
-double **  calculate_TOM_from_unsigned_Adjacency_Matrix( double **  array_2_dimension_adjacency , long int total_nodes_number )
+double **  calculate_unsigned_TOM_from_unsigned_or_signed_Adjacency_Matrix( double **  array_2_dimension_adjacency , long int total_nodes_number )
 {
     // calculate TOM
     double ** array_2_dimension_TOM = new double * [ total_nodes_number ];
