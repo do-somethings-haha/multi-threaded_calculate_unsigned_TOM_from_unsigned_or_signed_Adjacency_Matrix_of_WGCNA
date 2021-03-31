@@ -1,5 +1,4 @@
-# fast calculate unsigned TOM from unsigned Adjacency Matrix of WGCNA
-Optimize weighted gene co-expression network analysis: fast calculate Topological Overlap Matrix
+# Optimize weighted gene co-expression network analysis: fast calculate unsigned Topological Overlap Matrix from unsigned Adjacency Matrix
 
 <h1>Introduction</h1>
 
@@ -7,11 +6,14 @@ Optimize weighted gene co-expression network analysis: fast calculate Topologica
   &nbsp;&nbsp;&nbsp;&nbsp; The codes here can run on Linux and Windows systems. It’s better to use a CPU cooler with a fast fan speed to avoid the CPU running at reduced frequency due to high temperature.
 
 <h1>Usage of codes</h1>
+Before starting the following steps, please install two packages in the R language 
+install.packages( c("Rcpp" , "RcppArmadillo") )
 
 <h2>If you want to analyze the transcriptome data with WGCNA and the codes here<h2>
 
-<h3>Step 1: Put the source code files of R and C++ in the working directory of R</h3>
-  &nbsp;&nbsp;&nbsp;&nbsp; The file path of the R working directory should contain only English letters, numbers, and underscores. 
+<h3>Step 1: Put the source code files of R and C++ in the working directory of R and install R packages</h3>
+  &nbsp;&nbsp;&nbsp;&nbsp; The file path of the R working directory should contain only English letters, numbers, and underscores. Then use the following code to install two packages in R language.
+  <pre>install.packages( c("Rcpp" , "RcppArmadillo") )</pre>
 
 <h3>Step 2: Run the R code you just copied instead of WGCNA's TOMsimilarity function</h3>
   &nbsp;&nbsp;&nbsp;&nbsp; You need to use the WGCNA package to calculate the unsigned Adjacency Matrix from the expression matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA. Then you can run the R codes that you downloaded from here.
