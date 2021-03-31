@@ -7,7 +7,7 @@ using namespace Rcpp;
 using namespace std;
 
 // [[Rcpp::export]]
-Rcpp::NumericMatrix  calculate_TOM_from_unsigned_Adjacency_Matrix( Rcpp::NumericMatrix  Adjacency_Matrix_Rcpp_NumericMatrix )
+Rcpp::NumericMatrix  calculate_unsigned_TOM_from_unsigned_or_signed_Adjacency_Matrix( Rcpp::NumericMatrix  Adjacency_Matrix_Rcpp_NumericMatrix )
 {
     long int total_gene_number = Adjacency_Matrix_Rcpp_NumericMatrix.nrow();
     double ** array_2_dimension_adjacency = new double * [ total_gene_number ];
