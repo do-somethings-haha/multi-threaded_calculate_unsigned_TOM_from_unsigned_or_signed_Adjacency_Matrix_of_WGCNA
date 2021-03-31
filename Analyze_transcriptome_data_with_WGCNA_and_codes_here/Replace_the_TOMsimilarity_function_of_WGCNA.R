@@ -10,7 +10,7 @@ RcppArmadillo.package.skeleton("FastCalculateTOM") # If you have run this line o
 ### Put the C++ source files in the current working directory of R, 
 ### then compile and import the C++ function
 # getwd()  # Look at the current working directory 
-Rcpp::sourceCpp( "C_OpenMP.cpp" )
+Rcpp::sourceCpp( "FastCalculateTOM.cpp" )
 
 ### run the C++ function, and get the TOM
-TOM = calculate_TOM_from_unsigned_Adjacency_Matrix( adjacency_matrix )
+TOM = calculate_unsigned_TOM_from_unsigned_or_signed_Adjacency_Matrix( adjacency_matrix )
