@@ -1,5 +1,5 @@
 ### Before executing the following code, 
-### you must have got the unsigned Adjacency Matrix named adjacency_matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA.
+### you must have got the unsigned or signed Adjacency Matrix named adjacency_matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA.
 
 ### install and import the Rcpp amd RcppArmadillo packages
 # install.packages( c("Rcpp" , "RcppArmadillo") )
