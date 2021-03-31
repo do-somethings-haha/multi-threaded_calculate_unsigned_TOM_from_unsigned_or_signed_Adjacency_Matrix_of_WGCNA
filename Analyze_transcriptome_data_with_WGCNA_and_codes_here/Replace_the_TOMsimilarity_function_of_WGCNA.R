@@ -2,7 +2,7 @@
 ### you must have got the unsigned Adjacency Matrix named adjacency_matrix
 
 ### install and import the Rcpp amd RcppArmadillo packages
-# install.packages( "Rcpp" , "RcppArmadillo" )
+# install.packages( c("Rcpp" , "RcppArmadillo") )
 library(Rcpp)
 library(RcppArmadillo)
 RcppArmadillo.package.skeleton("FastCalculateTOM") # If you have run this line of code, there is already a folder named FastCalculateTOM in the working directory of R, then you don’t need to run this line of code. 
