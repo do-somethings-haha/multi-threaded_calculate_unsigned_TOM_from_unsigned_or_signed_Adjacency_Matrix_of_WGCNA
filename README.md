@@ -1,8 +1,8 @@
-# Optimize weighted gene co-expression network analysis: fast calculate unsigned Topological Overlap Matrix from unsigned Adjacency Matrix
+# Optimize weighted gene co-expression network analysis: fast calculate unsigned Topological Overlap Matrix from unsigned or signed Adjacency Matrix
 
 <h1>Introduction</h1>
 
-  &nbsp;&nbsp;&nbsp;&nbsp; Biomolecular networks are usually scale-free hierarchical networks. The weighted gene co-expression network analysis (WGCNA) package in R language treats gene co-expression networks as undirected scale-free hierarchical weighted networks. WGCNA uses an Adjacency Matrix to store a network, next calculates the Topological Overlap Matrix (TOM), and then gets the modules (sub-networks), each module corresponds to a certain biological function. The most time-consuming step of WGCNA is to calculate TOM from the Adjacency Matrix in a single thread. This paper changes the single-threaded algorithm of the TOM to a multi-threaded algorithm (the parameters are all the WGCNA's default value: "unsigned" ). This paper uses Rcpp to make R call a C++ function, then C++ uses OpenMP to open multiple threads, and calculates TOM from the Adjacency Matrix. On Shared-memory MultiProcessor systems, the calculation time decreases as the number of CPU cores increases. The algorithm of this paper can promote the application of WGCNA on large data sets, and help other research fields to find sub-networks in undirected scale-free hierarchical weighted networks.<br/><br/>
+  &nbsp;&nbsp;&nbsp;&nbsp; Biomolecular networks are usually scale-free hierarchical networks. The weighted gene co-expression network analysis (WGCNA) package in R language treats gene co-expression networks as undirected scale-free hierarchical weighted networks. WGCNA uses an Adjacency Matrix to store a network, next calculates the Topological Overlap Matrix (TOM), and then gets the modules (sub-networks), each module corresponds to a certain biological function. The most time-consuming step of WGCNA is to calculate TOM from the Adjacency Matrix in a single thread. This paper changes the single-threaded algorithm of the TOM to a multi-threaded algorithm (only for the calculation of commonly used unsigned or signed Adjacency Matrix to unsigned TOM). This paper uses Rcpp to make R call a C++ function, then C++ uses OpenMP to open multiple threads, and calculates TOM from the Adjacency Matrix. On Shared-memory MultiProcessor systems, the calculation time decreases as the number of CPU cores increases. The algorithm of this paper can promote the application of WGCNA on large data sets, and help other research fields to find sub-networks in undirected scale-free hierarchical weighted networks.<br/><br/>
   &nbsp;&nbsp;&nbsp;&nbsp; The codes here can run on Linux and Windows systems. It’s better to use a CPU cooler with a fast fan speed to avoid the CPU running at reduced frequency due to high temperature.
 
 <h1>Usage of codes</h1>
@@ -16,7 +16,7 @@ install.packages( c("Rcpp" , "RcppArmadillo") )
   <pre>install.packages( c("Rcpp" , "RcppArmadillo") )</pre>
 
 <h3>Step 2: Run the R code you just copied instead of WGCNA's TOMsimilarity function</h3>
-  &nbsp;&nbsp;&nbsp;&nbsp; You need to use the WGCNA package to calculate the unsigned Adjacency Matrix from the expression matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA. Then you can run the R codes that you downloaded from here.
+  &nbsp;&nbsp;&nbsp;&nbsp; You need to use the WGCNA package to calculate the unsigned or signed Adjacency Matrix from the expression matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA. Then you can run the R codes that you downloaded from here.
 
 <br/><br/>
 <h2>If you want to analyze data from other research fields<h2>
