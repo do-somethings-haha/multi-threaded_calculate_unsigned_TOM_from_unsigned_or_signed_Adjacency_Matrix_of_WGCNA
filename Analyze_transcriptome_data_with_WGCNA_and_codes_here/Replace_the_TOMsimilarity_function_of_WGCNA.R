@@ -1,7 +1,7 @@
 ### Before executing the following code, 
 ### you must have got the unsigned or signed Adjacency Matrix named adjacency_matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA.
 
-### install and import the Rcpp amd RcppArmadillo packages
+### Install and import the Rcpp amd RcppArmadillo packages
 # install.packages( c("Rcpp" , "RcppArmadillo") )
 library(Rcpp)
 library(RcppArmadillo)
@@ -12,5 +12,6 @@ RcppArmadillo.package.skeleton("FastCalculateTOM") # If you have run this line o
 # getwd()  # Look at the current working directory 
 Rcpp::sourceCpp( "FastCalculateTOM.cpp" )
 
-### run the C++ function, and get the TOM
+### Run the C++ function, and get the TOM with TOMtype="unsigned" and TOMDenom="min".
+### They are default parameters in the "TOMsimilatiry" function of the WGCNA.
 TOM = calculate_unsigned_TOM_from_unsigned_or_signed_Adjacency_Matrix( adjacency_matrix )
