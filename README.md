@@ -16,7 +16,7 @@ install.packages( c("Rcpp" , "RcppArmadillo") )
   <pre>install.packages( c("Rcpp" , "RcppArmadillo") )</pre>
 
 <h3>Step 2: Run the R code you just copied instead of WGCNA's TOMsimilarity function</h3>
-  &nbsp;&nbsp;&nbsp;&nbsp; You need to use the WGCNA package to calculate the unsigned or signed Adjacency Matrix from the expression matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA. Then you can run the R codes that you downloaded from here.
+  &nbsp;&nbsp;&nbsp;&nbsp; You need to use the WGCNA package to calculate the unsigned or signed Adjacency Matrix from the expression matrix. "unsigned" is the default value of the parameter named type of the "adjacency" function in the WGCNA. Then you can run the R codes that you downloaded from here. Next you will get the TOM with TOMtype="unsigned" and TOMDenom="min".
 
 <br/><br/>
 <h2>If you want to analyze data from other research fields<h2>
