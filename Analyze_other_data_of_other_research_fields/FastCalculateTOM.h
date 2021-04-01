@@ -3,11 +3,12 @@
 
 using namespace std;
 
-// The two-dimensional array storing the unsigned Adjacency Matrix in the heap area of memory must be obtained first.
-// This two-dimensional array is a secondary pointer, the data type is double. The unsigned Adjacency Matrix which must be a symmetric matrix, and the value of the diagonal is equal to 1.
+// The two-dimensional array storing the unsigned or signed Adjacency Matrix in the heap area of memory must be obtained first.
+// This two-dimensional array is a secondary pointer, the data type is double. The unsigned or signed Adjacency Matrix which must be a symmetric matrix, and the value of the diagonal is equal to 1.
 
 // Then pass the secondary pointer and the number of nodes of undirected scale-free hierarchical weighted networks as parameters to the following function.
-// The return value of the function is also a two-dimensional array, which stores the unsigned Topological Overlap Matrix.
+// The return value of the function is also a two-dimensional array, which stores the Topological Overlap Matrix with TOMtype="unsigned" and TOMDenom="min".
+// TOMtype="unsigned" and TOMDenom="min" are the default parameters in the "TOMsimilarity" function of the WGCNA.
 
 double **  calculate_unsigned_TOM_from_unsigned_or_signed_Adjacency_Matrix( double **  array_2_dimension_adjacency , long int total_nodes_number )
 {
