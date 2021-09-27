@@ -1,4 +1,4 @@
-# Optimize weighted gene co-expression network analysis: fast calculate unsigned Topological Overlap Matrix from unsigned or signed Adjacency Matrix
+# Optimizing weighted gene co-expression network analysis with a multi-threaded calculation of the Topological Overlap Matrix
 
 <h1>Introduction</h1>
 
