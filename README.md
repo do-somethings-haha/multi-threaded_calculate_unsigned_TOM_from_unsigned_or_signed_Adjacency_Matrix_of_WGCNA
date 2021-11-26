@@ -31,7 +31,7 @@ Details about Weighted gene co-expression network analysis(WGCNA) of R language:
 Details about the usage of original TOMsimilarity() function in WGCNA   <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/FemaleLiver-02-networkConstr-man.pdf  <br/>
 Details about mathematical formulas of the Topological Overlap Matrix (TOM): <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/TechnicalReports/index.html
+  &nbsp;&nbsp;&nbsp;&nbsp;  https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/TechnicalReports/index.html  <br/>
 The paper to which the algorithm here belongs  <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;  Shuai, M., He, D. & Chen, X. (2021). Optimizing weighted gene co-expression network analysis with a multi-threaded calculation of the topological overlap matrix. Statistical Applications in Genetics and Molecular Biology, (). https://doi.org/10.1515/sagmb-2021-0025
 
