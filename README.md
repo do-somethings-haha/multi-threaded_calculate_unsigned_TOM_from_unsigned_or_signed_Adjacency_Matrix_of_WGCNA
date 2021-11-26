@@ -7,8 +7,6 @@
   &nbsp;&nbsp;&nbsp;&nbsp; If you would like to use the algorithm here, please refer to this paper: &nbsp;&nbsp;&nbsp;&nbsp; Shuai, M., He, D. & Chen, X. (2021). Optimizing weighted gene co-expression network analysis with a multi-threaded calculation of the topological overlap matrix. Statistical Applications in Genetics and Molecular Biology, (). https://doi.org/10.1515/sagmb-2021-0025
 
 <h1>Usage of codes</h1>
-Before starting the following steps, please install two packages in the R language 
-install.packages( c("Rcpp" , "RcppArmadillo") )
 
 <h2>If you want to analyze the transcriptome data with WGCNA and the codes here<h2>
 
